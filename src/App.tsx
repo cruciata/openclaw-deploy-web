@@ -79,8 +79,8 @@ const SUCCESS_STORIES: SuccessStory[] = [
 
 const PRICING_PACKAGES: PricingPackage[] = [
   { name: '远程协助版', price: '¥49', features: ['远程一键安装', '环境基础优化', '模型下载指导', '7天售后支持'] },
-  { name: '本地上门版', price: '¥129', features: ['哈尔滨市区上门', '硬件深度检测', '自带离线模型包', '手把手教学', '30天售后保障'], isPopular: true },
-  { name: '企业定制版', price: '¥299+', features: ['多机位批量部署', '微信/飞书集成', '局域网共享配置', '长期技术顾问'] },
+  { name: '本地上门版', price: '¥199', features: ['哈尔滨市区上门', '硬件深度检测', '自带离线模型包', '手把手教学', '30天售后保障'], isPopular: true },
+  { name: '企业定制版', price: '¥499+', features: ['多机位批量部署', '微信/飞书集成', '局域网共享配置', '长期技术顾问'] },
 ];
 
 const MapSection = () => {
@@ -96,10 +96,9 @@ const MapSection = () => {
     <div className="w-full aspect-square rounded-[2.5rem] overflow-hidden border border-zinc-800 shadow-2xl relative bg-zinc-950 group">
       {/* 静态地图图片 - 这里使用了您提供的地图风格的占位图 */}
       <img 
-        src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=1000" 
+        src={new URL('../哈尔滨地图.png', import.meta.url).href}
         alt="哈尔滨地图" 
         className="w-full h-full object-cover opacity-40 grayscale group-hover:opacity-60 group-hover:grayscale-0 transition-all duration-1000 scale-110 group-hover:scale-100"
-        referrerPolicy="no-referrer"
       />
       
       {/* 扫描线效果 */}
