@@ -1,0 +1,5 @@
+{
+  "name": "哈尔滨本地 AI 一键安装服务",
+  "description": "提供 Ollama 和 OpenClaw 的本地上门及远程一键安装服务，零配置部署，隐私安全。",
+  "requestFramePermissions": []
+}
