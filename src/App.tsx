@@ -73,7 +73,7 @@ interface PricingPackage {
 // --- Data ---
 const SUCCESS_STORIES: SuccessStory[] = [
   { title: '办公效率提升 300%', content: '以前写周报要半小时，现在用本地部署的 DeepSeek 模型，5 分钟搞定，关键是不用担心公司数据泄露。', author: '张先生', role: '某科技公司项目经理' },
-  { title: '老电脑焕发第二春', content: '一直想玩《虎胆龙威》，但新系统总报错。找了哈尔滨 AI 团队，10 分钟就帮我装好了 OpenClaw，高清流畅！', author: '李同学', role: '怀旧游戏爱好者' },
+  { title: '公司自动化工作流', content: '之前需要手动抄数据、填表格要花一天，用本地 AI + OpenClaw 后，2 小时全部自动完成，效率提升 10 倍！', author: '李女士', role: '某企业数据运营' },
   { title: '私人 AI 导师', content: '作为大一新生，很多编程问题不敢问老师。本地装了 Llama 3 后，它就是我的 24 小时导师，进步飞快。', author: '王同学', role: '哈工大学生' },
 ];
 
@@ -153,7 +153,7 @@ const MapSection = () => {
 };
 const SERVICES: Service[] = [
   { title: 'Ollama 本地部署', description: '一键安装 Ollama 引擎，支持 Llama 3, Qwen 等主流大模型。', icon: <Cpu className="w-6 h-6" /> },
-  { title: 'OpenClaw 智能配置', description: '完美还原经典游戏引擎，适配现代系统，解决各类运行报错。', icon: <Globe className="w-6 h-6" /> },
+  { title: 'OpenClaw 智能配置', description: '部署 AI 智能体框架，让大模型拥有"手"和"眼"，自动操作浏览器、读写文件、执行代码。', icon: <Globe className="w-6 h-6" /> },
   { title: '微信/飞书接入', description: '将 AI 能力集成到您的常用办公软件，实现自动化智能办公。', icon: <MessageCircle className="w-6 h-6" /> },
   { title: '后续维护支持', description: '提供模型更新、故障排查、性能优化等全方位的售后保障。', icon: <Shield className="w-6 h-6" /> },
 ];
@@ -175,8 +175,8 @@ const INSTALL_DATA = {
     ]
   },
   OpenClaw: {
-    title: 'OpenClaw 游戏引擎',
-    description: '1997年经典游戏《虎胆龙威》的现代开源引擎，适配高清显示器。',
+    title: 'OpenClaw 智能体框架',
+    description: 'AI 智能体框架，让大模型能够自动操作浏览器、读写文件、执行代码等任务。',
     commands: {
       Windows: 'git clone https://github.com/pmanukyan/OpenClaw.git && cd OpenClaw',
       macOS: 'brew install openclaw',
@@ -203,12 +203,12 @@ const PROCESS_STEPS: Step[] = [
 const TARGET_USERS: TargetUser[] = [
   { title: '办公族', scene: '需要 AI 辅助写周报、润色邮件、整理会议纪要。', usage: '本地部署 AI 助手，极大提升办公效率。', icon: <Briefcase className="w-6 h-6" /> },
   { title: '学生党', scene: '学习编程、查阅文献、辅助论文写作。', usage: '低成本拥有私人 AI 导师，随时随地答疑。', icon: <GraduationCap className="w-6 h-6" /> },
-  { title: '开发者', scene: '需要本地运行模型进行 API 开发或微调测试。', usage: '零配置搭建开发环境，支持多种主流框架。', icon: <Code className="w-6 h-6" /> },
+  { title: '开发者', scene: '需要本地运行模型进行 API 开发，或基于 OpenClaw 构建自动化 AI 工作流。', usage: '零配置搭建开发环境，支持多种主流框架。', icon: <Code className="w-6 h-6" /> },
   { title: '隐私敏感用户', scene: '不希望数据上传云端，追求极致的数据安全性。', usage: '100% 本地运行，断网也能用，数据不出户。', icon: <Lock className="w-6 h-6" /> },
 ];
 
 const FAQS: FAQItem[] = [
-  { question: 'OpenClaw 是什么？', answer: 'OpenClaw 是 1997 年经典游戏《虎胆龙威》（Captain Claw）的现代开源引擎实现，让您在最新的 Windows/macOS/Linux 系统上也能完美运行这款经典游戏。' },
+  { question: 'OpenClaw 是什么？', answer: 'OpenClaw 是一款开源 AI 智能体框架，类似 Claude 的 Computer Use 功能。它让本地运行的大模型能够自动操作浏览器、读写文件、执行代码命令，从而完成复杂的自动化任务。' },
   { question: '我的电脑配置够吗？', answer: 'Ollama 运行基础模型通常需要 8GB 内存。如果需要流畅运行 7B 以上模型，建议 16GB 内存及 NVIDIA 显卡（4GB 显存以上）。我们会为您免费检测。' },
   { question: '安装需要多长时间？', answer: '在网络环境良好的情况下，通常 15-30 分钟即可完成全部配置和基础模型下载。' },
   { question: '后续更新怎么办？', answer: '我们会提供详细的更新指南，对于我们的老客户，重大版本更新我们提供免费的远程协助支持。' },
@@ -584,8 +584,9 @@ export default function App() {
                     '命令行报错无法解决，反复重试浪费时间',
                     '模型下载速度极慢，甚至无法连接服务器',
                     '显卡驱动不匹配，导致 AI 运行卡顿',
-                    '误删系统文件，导致电脑系统崩溃',
-                    '缺乏后续指导，装完不知如何使用'
+                    'OpenClaw 依赖环境复杂，Node.js/npm 安装报错',
+                    '浏览器自动化配置繁琐，Chrome 驱动版本不匹配',
+                    'AI 模型与 OpenClaw 连接失败，API 配置一头雾水'
                   ].map(item => (
                     <li key={item} className="flex items-start gap-4 text-zinc-400">
                       <div className="w-1.5 h-1.5 rounded-full bg-red-500/50 mt-2 flex-shrink-0"></div>
@@ -604,7 +605,8 @@ export default function App() {
                     '专业技术人员操作，确保 100% 成功率',
                     '自带高速离线模型包，无需等待漫长下载',
                     '针对您的硬件进行深度优化，发挥极致性能',
-                    '面对面教学，包教包会，快速上手',
+                    '一键配置 OpenClaw 与 Ollama 联动，AI 直接控制您的电脑',
+                    '预装浏览器自动化环境，开箱即用',
                     '永久售后群支持，解决一切后顾之忧'
                   ].map(item => (
                     <li key={item} className="flex items-start gap-4 text-zinc-200">
